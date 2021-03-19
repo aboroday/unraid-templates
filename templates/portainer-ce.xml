@@ -45,22 +45,19 @@
     </Labels>
 
     <Config Name="Enable proxying by traefik" Target="traefik.enable" Default="" Mode=""
-            Description="Enable proxying by traefik" Type="Label" Display="advanced" Required="false" Mask="false">true
-    </Config>
+            Description="Enable proxying by traefik" Type="Label" Display="advanced" Required="false"
+            Mask="false">true</Config>
 
     <Config Name="Web Interface Port for traefik" Target="traefik.http.services.plexui.loadbalancer.server.port"
             Default="9000" Mode="" Description="This is Portainer's Web UI port you can access via a web browser"
-            Type="Label" Display="always-visible" Required="false">9000
-    </Config>
+            Type="Label" Display="always-visible" Required="false">9000</Config>
 
     <Config Type="Path" Name="Config Storage Path" Target="/data" Default="/mnt/user/appdata/portainer-ce" Mode="rw"
             Display="always-visible" Required="true"
-            Description="This is where Portainer will store its configuration">/mnt/user/appdata/portainer-ce
-    </Config>
+            Description="This is where Portainer will store its configuration">/mnt/user/appdata/portainer-ce</Config>
 
     <Config Type="Path" Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw"
             Display="advanced-hide" Required="true"
-            Description="Path to docker.sock socket">/var/run/docker.sock
-    </Config>
+            Description="Path to docker.sock socket">/var/run/docker.sock</Config>
 
 </Container>
