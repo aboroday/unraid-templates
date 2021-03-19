@@ -39,13 +39,13 @@
         </Label>
         <Label>
             <Value>true</Value>
-            <Name>traefik.http.services.plexui.loadbalancer.server.port</Name>
+            <Name>traefik.http.services.portainer-ce.loadbalancer.server.port</Name>
             <Mode/>
         </Label>
     </Labels>
 
     <Config Name="Enable proxying by traefik" Target="traefik.enable" Default="" Mode=""
-            Description="Enable proxying by traefik" Type="Label" Display="advanced" Required="false" Mask="false">false
+            Description="Enable proxying by traefik" Type="Label" Display="advanced" Required="false" Mask="false">true
     </Config>
 
     <Config Name="Web Interface Port for traefik" Target="traefik.http.services.plexui.loadbalancer.server.port"
