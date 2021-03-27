@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <Name>mariadb</Name>
+    <Repository>mariadb</Repository>
+    <Registry>https://hub.docker.com/_/mariadb</Registry>
+    <Network Default="bridge">bridge</Network>
+    <Category>Other</Category>
+
+    <Project>https://mariadb.org/</Project>
+    <Overview>
+        An Enhanced drop in replacement for Mysql
+    </Overview>
+    <Privileged>false</Privileged>
+    <Environment/>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish/>
+    </Networking>
+    <Data>
+        <Volume>
+            <HostDir>/mnt/user/appdata/mariadb</HostDir>
+            <ContainerDir>/var/lib/mysql</ContainerDir>
+            <Mode>rw</Mode>
+        </Volume>
+    </Data>
+    <WebUI/>
+    <Icon>https://raw.githubusercontent.com/aboroday/unraid-templates/master/templates/img/mariadb.logo.png</Icon>
+
+    <Labels>
+        <Label>
+            <Value>false</Value>
+            <Name>traefik.enable</Name>
+            <Mode/>
+        </Label>
+        <Label>
+            <Value>3306</Value>
+            <Name>traefik.tcp.services.mariadb.loadbalancer.server.port</Name>
+            <Mode/>
+        </Label>
+    </Labels>
+
+    <Config Name="Enable proxying by traefik" Target="traefik.enable" Default="" Mode=""
+            Description="Enable proxying by traefik" Type="Label" Display="advanced" Required="false"
+            Mask="false">true</Config>
+
+    <Config Name="MariaDB TCP port for traefik" Target="traefik.tcp.services.mariadb.loadbalancer.server.port"
+            Default="3306" Mode="" Description="This is MariaDB TCP port"
+            Type="Label" Display="always-visible" Required="false">3306</Config>
+
+    <Config Type="Path" Name="DB path" Target="/var/lib/mysql" Default="/mnt/user/appdata/mariadb" Mode="rw"
+            Display="always-visible" Required="true"
+            Description="This is where MariaDB stores it DB files">/mnt/user/appdata/mariadb</Config>
+
+</Container>
